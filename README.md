@@ -47,6 +47,11 @@ arg1 -- directory where the indexed files were written to in the previous step i
 How to run - PA2
 =================
 
+Spelling Corrector
+
+Usage
+======
+
 > Step1: Train the noisy channel model  
 \>./buildmodels.sh <training corpus> <training edits file>  
 training corpus     -- corpus on which the noisy channel model will be trained for computing N-gram probabilties  
