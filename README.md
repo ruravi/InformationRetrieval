@@ -93,4 +93,23 @@ queryDocTrainRel -- Use the file with the same name. This containes formatted da
 queryDocTestData -- A file containing a query followed by a set of documents. The program will rank the documents  
                     according to the specified ranking measure specified in task_number
                     
+How to run - PA4
+=================
+
+Text Classification based on  
+1) Binomial Naive Bayes  
+2) Binomial Naive Bayes with Chi squared feature selection  
+3) Multinomial Naive Bayes  
+4) Multinomial Naive Bayes with Chi squared feature selection
+5) Transform Weight normalized complementary Naive Bayes
+6) Support Vector Machines
+7) K fold cross validation performed for tuning parameters for each of the above learning algorithms
+
+Usage:
+=======
+
+Detailed Instructions on how to run this assignment are given in PA4.pdf in the PA4 directory
+
+
+
                     
