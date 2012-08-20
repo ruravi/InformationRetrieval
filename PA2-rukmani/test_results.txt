@@ -1,0 +1,40 @@
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 
+MU=1.000000, LAMBDA=0.100000, P=0.010000
+accuracy = 0.833333333333
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 2 
+MU=2.000000, LAMBDA=0.100000, P=0.010000
+accuracy = 0.803921568627
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 3 
+MU=3.000000, LAMBDA=0.100000, P=0.010000
+accuracy = 0.78431372549
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.1 
+MU=1.000000, LAMBDA=0.100000, P=0.010000
+accuracy = 0.833333333333
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.2 
+MU=1.000000, LAMBDA=0.200000, P=0.010000
+accuracy = 0.825490196078
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.3 
+MU=1.000000, LAMBDA=0.300000, P=0.010000
+accuracy = 0.813725490196
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.4 
+MU=1.000000, LAMBDA=0.400000, P=0.010000
+accuracy = 0.805882352941
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.1 0.01 
+MU=1.000000, LAMBDA=0.100000, P=0.010000
+accuracy = 0.833333333333
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.1 0.05 
+MU=1.000000, LAMBDA=0.100000, P=0.050000
+accuracy = 0.850980392157
+
+f:\stanford\spr2012\cs276\assignments\02\Dropbox\PA2\PA2-rukmani>python corrector.py test uniform data\queries.txt 1 0.1 0.1 
+MU=1.000000, LAMBDA=0.100000, P=0.100000
+accuracy = 0.829411764706

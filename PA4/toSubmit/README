@@ -1,0 +1,19 @@
+Rukmani Ravisundaram
+Tayyab Tariq
+
+Comments about how to run your code.
+./runNaiveBayes.sh <args>
+	binomial      --Binomial Naive Bayes classificaiton(Deliverable1)
+        binomial-chi2 --Binimial Naive Bayes with Chi2(Deliverable2)
+        multinomial   --Multinomial Naive bayes(Deliverable3)
+                        (Deliverable4):
+        kfcvm         --k fold cross validation Multinomial
+	kfcvmc        --k fold cross validation Multinomial Chi2
+        kfcvb         --k fold cross validation Binomial
+        kfcvbc        --k fold cross validation Binomial Chi2
+        kfcvtwcnb     --k fold cross validation TWCNB
+	twcnb         --TWCNB(Deliverable5)
+        svm           --Deliverable 7 Support Vector Machines(you may need to do			wnload LIBSVM python files to run this)
+        tfidf         --Deliverable 8 k Nearest Neighbors
+        
+For Deliverable 6, run ./setup.sh, We have modified message_parser.py to output bigrams, use this as the out.pk when running runNaiveBayes.sh with the option multinomial
