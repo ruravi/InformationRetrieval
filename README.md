@@ -68,3 +68,29 @@ Uniform edit model  -- An edit model that considers all spelling errors occur wi
 Empirical edit model-- An edit model that is trained on a dataset provided in the edits file with buildmodel.sh  
                        This will be used in computing the probabilities for each kind of spelling error  
                        
+How to run - PA3
+=================
+
+Ranked Information Retrieval based on  
+1) Cosine Similarity  
+2) BM25 ranking measure  
+3) Smallest Window of query terms  
+4) Number of in-links to a webpage  
+
+Usage
+======
+
+> \>python rank.py task_number queryDocTrainData queryDocTrainRel queryDocTestData
+task_number   -- 1 | 2 | 3 | 4
+              1 -- Ranking based on cosine similarity
+              2 -- Ranking based on BM25 similarity measure
+              3 -- Ranking based on Smallest Window signal
+              4 -- Ranking based on # in-links for a page
+queryDocTrainData -- Use the file with the same name. This contains formatted data for training the model  
+                     on a set of queries and a set of relevant results for each query.
+queryDocTrainRel -- Use the file with the same name. This containes formatted data for training the model
+                    on a set of queries and a set of relevant results for each query.
+queryDocTestData -- A file containing a query followed by a set of documents. The program will rank the documents  
+                    according to the specified ranking measure specified in task_number
+                    
+                    
