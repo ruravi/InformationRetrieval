@@ -43,3 +43,23 @@ arg2 -- output directory where indexed files will be stored by the program i.e f
 > \>python query.py arg1  
 Enter query terms after issuing this command. Searches the built index for relevant files (unranked retrieval)  
 arg1 -- directory where the indexed files were written to in the previous step i.e arg2 of step 1 above  
+
+How to run - PA2
+=================
+
+> Step1: Train the noisy channel model  
+\>./buildmodels.sh <training corpus> <training edits file>  
+training corpus     -- corpus on which the noisy channel model will be trained for computing N-gram probabilties  
+training edits file -- A file containing a word and its misspellings, used for training the edit model probabilities  
+
+> Step2: Test the noisy channel model on sentences/queries with spelling errors  
+\>./runcorrector.sh <dev | test> <uniform | emperical> <queries file>  
+dev | test          -- really, pass in anything  
+uniform | empirical -- Pass in uniform for using a uniform edit model, empirical for a trained edit model
+queries file        -- A file containing one query string per line, with possible spelling mistakes
+
+> Reference :  
+Uniform edit model  -- An edit model that considers all spelling errors occur with the same probabilty  
+Empirical edit model-- An edit model that is trained on a dataset provided in the edits file with buildmodel.sh  
+                       This will be used in computing the probabilities for each kind of spelling error  
+                       
