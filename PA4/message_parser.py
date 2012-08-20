@@ -37,12 +37,20 @@ def parse_training_dirs(inp_dir, out_file):
       parse_newsgroup(group, os.path.join(inp_dir,train_dir), writer)
 
 def parse_newsgroup(group_num, train_dir, writer):
+  class_index = 0
+  current_class = -1
   try:
     msgs = sorted(os.listdir(train_dir))
     print("Parsing {0} with {1} messages".format(train_dir, len(msgs)) ,
       file=sys.stderr)
     for msg in msgs:
       mf = MessageFeatures(group_num, os.path.join(train_dir,msg), stemmer, stopwords)
+      if not mf.newsgroupnum == current_class:
+	    current_class = mf.newsgroupnum
+	    class_index = 0
+      mf.class_index = class_index
+      class_index += 1
+      	
       writer.dump(mf)
   except IOError as e:
     print('Cannot locate directory: '+train_dir, file=sys.stderr)

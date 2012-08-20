@@ -2,7 +2,6 @@ from __future__ import print_function
 
 from message_iterators import MessageIterator
 from collections import defaultdict
-from collections import Counter
 import math
 
 
@@ -20,15 +19,12 @@ class MultinomialNB():
             N += 1
             docClass = message.newsgroupnum
             self.prior[docClass] = self.prior.get(docClass,0) + 1
-            text = Counter()
-            text.update(message.subject)
-            text.update(message.body)
-            for word,count in text.items():
+            for word,count in message.body.items():
                 self.language_model[word][docClass] = self.language_model[word].get(docClass,0) + count
                 totalWordsInClass[docClass] = totalWordsInClass.get(docClass,0) + count
-            #for word,count in message.subject.items():
-            #    self.language_model[word][docClass] = self.language_model[word].get(docClass,0) + count
-            #    totalWordsInClass[docClass] = totalWordsInClass.get(docClass,0) + count
+            for word,count in message.subject.items():
+                self.language_model[word][docClass] = self.language_model[word].get(docClass,0) + count
+                totalWordsInClass[docClass] = totalWordsInClass.get(docClass,0) + count
         V = len(self.language_model.keys())
         #Divide raw counts of #docs of each class by total # of docs
         for each in self.prior.keys():
@@ -49,7 +45,6 @@ class MultinomialNB():
             if count > 20 and msg.newsgroupnum == previousClass:
                 continue
             elif count > 20 and msg.newsgroupnum != previousClass:
-                print()
                 count = 1
             previousClass = msg.newsgroupnum
             scoreVector = []
@@ -57,18 +52,14 @@ class MultinomialNB():
                 score = 0
                 prior = self.prior[eachClass]
                 score += math.log(prior)
-                text = Counter()
-                text.update(msg.subject)
-                text.update(msg.body)
-                for word, wordCount in text.items():
-                        score += math.log(self.language_model[word][eachClass]) * wordCount
-                #for word, wordCount in msg.subject.items():
-                #        score += math.log(self.language_model[word][eachClass]) * wordCount
+                for word, wordCount in msg.body.items():
+                        score += math.log(self.language_model[word][eachClass])
+                for word, wordCount in msg.subject.items():
+                        score += math.log(self.language_model[word][eachClass])
                 scoreVector.append(score)
+                print(score,end='\t')
             winner = max(scoreVector)
             winnerClass = scoreVector.index(winner)
-            print(winnerClass,end='\t')
             if winnerClass == msg.newsgroupnum:
                 correct += 1
-        print('Accuracy = ',correct/400.0)
-        
+            print()

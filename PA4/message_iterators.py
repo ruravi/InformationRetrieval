@@ -32,10 +32,10 @@ def main():
   for mf in mi:
     print("{0} ({1})".format(mf.filename,mf.newsgroupnum))
     print("Subject:")
-    for subj,count in mf.subject.counts:
-      print("Count for "+subj+" is "+count)
-    for word,count in mf.body.counts:
-      print("Count for "+word+" is "+count)
+    for subj,count in mf.subject.items():
+      print("Count for "+subj+" is "+str(count))
+    for word,count in mf.body.items():
+      print("Count for "+word+" is "+str(count))
 
 if __name__ == '__main__':
   main()
